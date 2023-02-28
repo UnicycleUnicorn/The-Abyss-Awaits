@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>The_Abyss_Awaits</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\FNA\FNA.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="obj\Debug\fnalibs\lib64\libFAudio.so.0" />
+      <Content Include="obj\Debug\fnalibs\lib64\libFNA3D.so.0" />
+      <Content Include="obj\Debug\fnalibs\lib64\libSDL2-2.0.so.0" />
+      <Content Include="obj\Debug\fnalibs\lib64\libtheorafile.so" />
+      <Content Include="obj\Debug\fnalibs\osx\libFAudio.0.dylib" />
+      <Content Include="obj\Debug\fnalibs\osx\libFNA3D.0.dylib" />
+      <Content Include="obj\Debug\fnalibs\osx\libMoltenVK.dylib" />
+      <Content Include="obj\Debug\fnalibs\osx\libSDL2-2.0.0.dylib" />
+      <Content Include="obj\Debug\fnalibs\osx\libtheorafile.dylib" />
+      <Content Include="obj\Debug\fnalibs\osx\libvulkan.1.dylib" />
+      <Content Include="obj\Debug\fnalibs\README.txt" />
+      <Content Include="obj\Debug\fnalibs\vulkan\icd.d\MoltenVK_icd.json" />
+      <Content Include="obj\Debug\fnalibs\x64\FAudio.dll" />
+      <Content Include="obj\Debug\fnalibs\x64\FNA3D.dll" />
+      <Content Include="obj\Debug\fnalibs\x64\libtheorafile.dll" />
+      <Content Include="obj\Debug\fnalibs\x64\SDL2.dll" />
+      <Content Include="obj\Debug\fnalibs\x86\FAudio.dll" />
+      <Content Include="obj\Debug\fnalibs\x86\FNA3D.dll" />
+      <Content Include="obj\Debug\fnalibs\x86\libtheorafile.dll" />
+      <Content Include="obj\Debug\fnalibs\x86\SDL2.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources" />
+    </ItemGroup>
+
+</Project>
