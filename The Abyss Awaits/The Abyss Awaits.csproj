@@ -36,7 +36,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources" />
+      <Folder Include="bin\Debug\net6.0" />
+      <Folder Include="bin\Log" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="bin\Debug\net6.0\Resources\steve.png" />
+      <None Include="bin\Resources\steve.png" />
     </ItemGroup>
 
 </Project>

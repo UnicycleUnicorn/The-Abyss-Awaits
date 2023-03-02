@@ -1,15 +1,15 @@
 ﻿using System.Diagnostics;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace The_Abyss_Awaits.util;
 
 public static class Logger {
     private static readonly string Time = DateTime.Now.ToString("MM-dd__HH-mm");
-    private static readonly string LogFile = $"../Log/{Time}.html";
+    private static readonly string LogFile = $"../../Log/{Time}.html";
 
     static Logger() {
-        using (var w = File.AppendText(LogFile)) {
-            w.WriteLine(@"
+        // Setup to html log file by adding boilerplate html and css
+        using var w = File.AppendText(LogFile);
+        w.WriteLine(@"
             <!doctype html>
             <html lang=""en"">
             <head>
@@ -38,7 +38,6 @@ public static class Logger {
             </head>
             <body>
             ");
-        }
     }
 
     public static void Warn(string text) {
@@ -62,12 +61,12 @@ public static class Logger {
         Log(text, "error");
         Console.ResetColor();
     }
-
+    
     public static void ShowLog() {
         try {
-            Process.Start(new ProcessStartInfo(Path.Combine(Environment.CurrentDirectory, LogFile)) { UseShellExecute = true });
-        }
-        catch (Exception e) {
+            Process.Start(new ProcessStartInfo(Path.Combine(Environment.CurrentDirectory, LogFile))
+                { UseShellExecute = true });
+        } catch (Exception e) {
             Warn(e.ToString());
         }
     }
