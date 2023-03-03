@@ -11,32 +11,34 @@ public class Player : IStats {
     private Vector2 _pos;
     private Texture2D _sprite;
     private float _spriteWidth;
-    private float _moveSpeed = 5.0f;
+    private float _moveSpeed = 5.0f; // Play with number
     
     // Player Controlled Stats
-    public byte Alchemy = 0;
-    public byte Casting = 0;
-    public byte Imbuement = 0;
-    public byte Blacksmithing = 0;
-    public byte Jewling = 0;
+    public byte Alchemy;
+    public byte Casting;
+    public byte Imbuement;
+    public byte Blacksmithing;
+    public byte Jewling;
     
     // Level Controlled Stats
-    public byte Mana = 0;
-    public byte Health = 0;
-    public byte Speed = 0;
-    public byte Strength = 0;
-    public byte Luck = 0;
-    public byte Charisma = 0;
-    public byte Stamina = 0;
-    
+    public byte Mana;
+    public byte Health;
+    public byte Speed;
+    public byte Strength;
+    public byte Luck;
+    public byte Charisma;
+    public byte Stamina;
     
     // Level
-    public byte Level = 1;        // 1 -> ?
-    public short DungeonRank = 0; // 0 -> 999
+    public byte Level;        // 1 -> ?
+    public short DungeonRank; // 0 -> 999
+
+    public int ExperiencePoints;
+    public int DungeonPoints;
 
     public float SpriteHeight {
         get {
-            return _sprite.Height * _spriteWidth / _sprite.Width;
+            return _sprite.Height * _spriteWidth / _sprite.Width; // Play with number
         }
     }
 
@@ -49,7 +51,27 @@ public class Player : IStats {
     public Player(MainGame game, Vector2 pos) {
         this._game = game;
         this._pos = pos;
-        _spriteWidth = 100f;
+
+        Alchemy = 0;
+        Casting = 0;
+        Imbuement = 0;
+        Blacksmithing = 0;
+        Jewling = 0;
+
+        Mana = 0;
+        Health = 0;
+        Speed = 0;
+        Strength = 0;
+        Luck = 0;
+        Charisma = 0;
+        Stamina = 0;
+
+        Level = 1;
+        ExperiencePoints = 0;
+        DungeonRank = 0;
+        DungeonPoints = 0;
+        
+        _spriteWidth = 100f; // Play with number
     }
 
     public void AddToStat(byte stat, byte val) {
@@ -68,8 +90,31 @@ public class Player : IStats {
         spriteBatch.Draw(_sprite, Rectangle, Color.White);
     }
 
+    public short CalculateRequiredExperienceForLevelUp(byte lvl) {
+        return lvl *= 5; // Play with equation
+    }
+    
+    public short CalculateRequiredDungeonPointsForLevelUp(short lvl) {
+        return lvl *= 5; // Play with equation
+    }
+
+    public void LevelUp() {
+        int requiredExp = CalculateRequiredExperienceForLevelUp(Level);
+        int requiredDgp = CalculateRequiredDungeonPointsForLevelUp(DungeonRank);
+        
+        if (ExperiencePoints >= requiredExp) {
+            Level += 1;
+            ExperiencePoints %= requiredExp;
+        }
+        
+        if (DungeonPoints >= requiredDgp) {
+            DungeonRank += 1;
+            DungeonPoints %= requiredDgp;
+        }
+    }
+
     private void HandleUserInput() {
-        _pos.X += UserInput.MovementVector.X * _moveSpeed;
-        _pos.Y -= UserInput.MovementVector.Y * _moveSpeed;
+        _pos.X += UserInput.MovementVector.X * _moveSpeed; // Play with number
+        _pos.Y -= UserInput.MovementVector.Y * _moveSpeed; // Play with number
     }
 }
