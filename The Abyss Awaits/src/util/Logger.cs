@@ -61,16 +61,17 @@ public static class Logger {
         Log(text, "error");
         Console.ResetColor();
     }
-    
+
     public static void ShowLog() {
         try {
             Process.Start(new ProcessStartInfo(Path.Combine(Environment.CurrentDirectory, LogFile))
                 { UseShellExecute = true });
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             Warn(e.ToString());
         }
     }
-    
+
     private static void Log(string text, string clss) {
         text = $"{DateTime.Now} : {text}";
         Console.WriteLine(text);

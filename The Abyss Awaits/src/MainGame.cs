@@ -2,6 +2,7 @@
 using The_Abyss_Awaits.util;
 using Microsoft.Xna.Framework;
 using The_Abyss_Awaits.input;
+using The_Abyss_Awaits.potion;
 
 namespace The_Abyss_Awaits;
 
@@ -56,10 +57,10 @@ class MainGame : Game  {
     protected override void Update(GameTime gameTime) {
         // Update user input to get the user's keyboard, mouse, and controller inputs
         UserInput.Update();
-        
+
         base.Update(gameTime);
     }
-    
+
     /* Render loop */
     protected override void Draw(GameTime gameTime) {
         GraphicsDevice.Clear(Color.CornflowerBlue);
