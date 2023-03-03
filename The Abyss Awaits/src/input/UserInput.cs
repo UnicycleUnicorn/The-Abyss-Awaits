@@ -43,5 +43,5 @@ public static class UserInput {
         if (_keyboardSpecificControls.Contains(item) || !UsingController) return KeyboardMouse.GetButtonState(item);
         return Controller.GetButtonState(item);
     }
-    
+
 }

@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Abyss Awaits", "The Abyss Awaits\The Abyss Awaits.csproj", "{5ACBD349-7573-47C0-B856-AAC7EB99515E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNA", "..\..\FNA\FNA.csproj", "{35253CE1-C864-4CD3-8249-4D1319748E8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNA", "..\FNA\FNA.csproj", "{35253CE1-C864-4CD3-8249-4D1319748E8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\FNA\FNA.csproj" />
+      <ProjectReference Include="..\..\FNA\FNA.csproj" />
     </ItemGroup>
 
     <ItemGroup>
